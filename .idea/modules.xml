@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lion.iml" filepath="$PROJECT_DIR$/lion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lion-dao/lion-dao.iml" filepath="$PROJECT_DIR$/lion-dao/lion-dao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lion-service/lion-service.iml" filepath="$PROJECT_DIR$/lion-service/lion-service.iml" />
+    </modules>
+  </component>
+</project>
