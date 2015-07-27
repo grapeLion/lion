@@ -12,6 +12,7 @@
     <modules>
         <module>lion-dao</module>
         <module>lion-service</module>
+        <module>lion-web</module>
     </modules>
 
 
@@ -55,6 +56,17 @@
                 <version>4.1.7.RELEASE</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>4.1.7.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>4.1.7.RELEASE</version>
+            </dependency>
 
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -105,6 +117,8 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.36</version>
             </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 

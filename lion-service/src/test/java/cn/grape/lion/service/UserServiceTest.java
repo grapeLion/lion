@@ -23,11 +23,6 @@ public class UserServiceTest {
     public void userTest(){
         List<User> list = userService.findAll();
         System.out.println(list);
-
-
-
-
-
     }
 
 }
