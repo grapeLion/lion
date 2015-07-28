@@ -13,7 +13,7 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
 
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven ></mvc:annotation-driven>
 
     <!-- 扫描指定的包中的类上的注解 -->
     <context:component-scan base-package="cn.grape.lion.controller"></context:component-scan>
