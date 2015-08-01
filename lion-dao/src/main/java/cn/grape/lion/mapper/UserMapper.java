@@ -1,14 +1,30 @@
 package cn.grape.lion.mapper;
 
 import cn.grape.lion.domain.User;
-
+import cn.grape.lion.domain.UserExample;
 import java.util.List;
+import org.apache.ibatis.annotations.Param;
 
-/**
- * Created by Emily on 15/7/25.
- */
 public interface UserMapper {
-    List<User> findAll();
+    int countByExample(UserExample example);
 
+    int deleteByExample(UserExample example);
 
+    int deleteByPrimaryKey(Integer id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    List<User> selectByExample(UserExample example);
+
+    User selectByPrimaryKey(Integer id);
+
+    int updateByExampleSelective(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByExample(@Param("record") User record, @Param("example") UserExample example);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }

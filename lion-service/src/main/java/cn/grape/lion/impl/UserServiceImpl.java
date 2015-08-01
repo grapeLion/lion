@@ -1,6 +1,5 @@
 package cn.grape.lion.impl;
 
-import cn.grape.lion.domain.User;
 import cn.grape.lion.mapper.UserMapper;
 import cn.grape.lion.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

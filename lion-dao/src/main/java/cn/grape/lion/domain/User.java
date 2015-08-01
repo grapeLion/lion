@@ -1,27 +1,40 @@
 package cn.grape.lion.domain;
 
-/**
- * Created by Emily on 15/7/25.
- */
+import java.util.Date;
+
 public class User {
-    private int id;
-    private String name;
+    private Integer id;
+
+    private String username;
+
+    private Date birthday;
+
     private String sex;
 
-    public int getId() {
+    private String address;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getSex() {
@@ -29,6 +42,14 @@ public class User {
     }
 
     public void setSex(String sex) {
-        this.sex = sex;
+        this.sex = sex == null ? null : sex.trim();
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 }

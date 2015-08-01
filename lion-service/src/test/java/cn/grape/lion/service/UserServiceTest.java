@@ -19,10 +19,6 @@ import java.util.List;
 public class UserServiceTest {
     @Autowired
     UserServiceImpl userService;
-    @Test
-    public void userTest(){
-        List<User> list = userService.findAll();
-        System.out.println(list);
-    }
+
 
 }

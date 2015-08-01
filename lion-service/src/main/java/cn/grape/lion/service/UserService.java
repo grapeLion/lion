@@ -1,8 +1,5 @@
 package cn.grape.lion.service;
 
-import cn.grape.lion.domain.User;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
-
 import java.util.List;
 
 /**
