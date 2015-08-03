@@ -21,4 +21,10 @@ public class UserServiceTest {
     UserServiceImpl userService;
 
 
+    @Test
+    public void test1(){
+        User u = userService.getUserById(1);
+        System.out.println(u);
+    }
+
 }
