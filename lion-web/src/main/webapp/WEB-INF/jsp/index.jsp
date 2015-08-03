@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@  page contentType="text/html;charset=UTF-8" language="java" %>
+
 <%
   String path = request.getContextPath();
   request.setAttribute("path", path);
@@ -14,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="${path}/static/easyui/locale/easyui-lang-zh_CN.js">
 </head>
 <body>
-      <div id="myPanel" class="easyui-window" title="测试表单" style="width:300px;height:400px;">
-            <h1>aaaaa${path}</h1>
+      <div id="myPanel" class="easyui-panel" title="测试表单" style="width:300px;height:200px;">
+            <h1>aaaaa${user.username}</h1>
       </div>
 
 

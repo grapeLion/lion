@@ -34,7 +34,7 @@ public class UserController {
         Map<String,Object> map = new HashMap<String, Object>();
         User user =  userService.getUserById(1);
         map.put("user",user);
-        return new ModelAndView("index") ;
+        return new ModelAndView("index",map) ;
     }
 
 }
