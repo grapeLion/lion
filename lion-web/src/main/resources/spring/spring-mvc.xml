@@ -21,12 +21,29 @@
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
     <context:annotation-config />
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="cn.grape.lion.annotation.FastJsonArgumentResolver"></bean>
+        </mvc:argument-resolvers>
+        <mvc:message-converters>
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!-- 扫描指定的包中的类上的注解 -->
     <context:component-scan base-package="cn.grape.lion"></context:component-scan>
 
 
+    <!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
+    <!-- 避免IE执行AJAX时,返回JSON出现下载文件 要引入org.codehaus.jackson个jar包-->
+    <!--<bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="supportedMediaTypes">
+            <list>
+                <value>text/html;charset=UTF-8</value>
+            </list>
+        </property>
+    </bean>
+-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"></property>
         <property name="suffix" value=".jsp"/>

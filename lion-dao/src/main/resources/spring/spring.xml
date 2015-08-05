@@ -9,6 +9,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
        ">
+
     <mvc:annotation-driven></mvc:annotation-driven>
     <context:annotation-config></context:annotation-config>
 

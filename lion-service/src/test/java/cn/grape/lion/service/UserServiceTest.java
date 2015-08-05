@@ -15,7 +15,7 @@ import java.util.List;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:spring/spring.xml","classpath:spring/spring-mybatis.xml"})
+@ContextConfiguration(locations = {/*"classpath:spring/spring.xml",*/"classpath:spring/spring-mybatis.xml"})
 public class UserServiceTest {
     @Autowired
     UserServiceImpl userService;
@@ -23,8 +23,8 @@ public class UserServiceTest {
 
     @Test
     public void test1(){
-        User u = userService.getUserById(1);
-        System.out.println(u);
+       List<User> list = userService.getUserList();
+        System.out.println(list);
     }
 
 }

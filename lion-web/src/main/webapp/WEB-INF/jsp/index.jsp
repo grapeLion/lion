@@ -15,10 +15,11 @@
     <link rel="stylesheet" type="text/css" href="${path}/static/easyui/locale/easyui-lang-zh_CN.js">
 </head>
 <body>
-      <div id="myPanel" class="easyui-panel" title="测试表单" style="width:300px;height:200px;">
-            <h1>aaaaa${user.username}</h1>
-      </div>
-
+<table id="easy-table"></table>
+<div>
+    <a id="btn" class="easyui-linkbutton"></a>
+</div>
 
 </body>
+<script type="text/javascript" src="${path}/static/js/index.js"></script>
 </html>

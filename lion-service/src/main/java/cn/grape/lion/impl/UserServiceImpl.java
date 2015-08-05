@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -21,5 +22,10 @@ public class UserServiceImpl implements UserService {
     public User getUserById(Integer id) {
         User user = userMapper.selectByPrimaryKey(id);
         return user;
+    }
+
+    @Override
+    public List<User> getUserList() {
+        return userMapper.findAll();
     }
 }

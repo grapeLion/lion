@@ -90,4 +90,9 @@
       address = #{address,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="findAll" resultType="cn.grape.lion.domain.User">
+    SELECT * FROM user
+  </select>
+
 </mapper>
