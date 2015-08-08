@@ -27,6 +27,11 @@ $(function(){
 
     });
 
+    var obj = $('#easy-table').datagrid('options')
+
+
+
+
     function UserVO(){
         this.username='';
     };
@@ -39,7 +44,6 @@ $(function(){
         var obj = new UserVO();
         UserVO.prototype.id;
         UserVO.prototype.idcard;
-        obj.id=10;
         obj.idcard='12820019199999999'
         obj.username='zhangsan';
         $.ajax({

@@ -20,10 +20,10 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
     <!--引入属性文件-->
-    <context:property-placeholder location="classpath:mybatis/db.properties"/>
-
+    <!--<context:property-placeholder location="classpath:mybatis/db.properties"/>-->
     <!--自动扫描自动注入-->
-    <context:component-scan base-package="cn.grape.lion"/>
+    <!--<context:annotation-config/>-->
+    <!--<context:component-scan base-package="cn.grape.lion"/>-->
     <!--  JNDI方式配置数据源  -->
     <!--
      <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> <property name="jndiName" value="${jndiName}"></property> </bean>

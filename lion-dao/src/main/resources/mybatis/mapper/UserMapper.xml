@@ -95,4 +95,20 @@
     SELECT * FROM user
   </select>
 
+  <select id="findAllRows" resultType="int">
+    SELECT COUNT(*) FROM user
+  </select>
+
+  <select id="findAllByPage" resultType="cn.grape.lion.domain.User">
+    SELECT * FROM user limit #{currentPage},#{rows}
+  </select>
+  <select id="findUserByName" resultType="cn.grape.lion.domain.User">
+    SELECT * FROM user
+    <where>
+      <if test="username != null">
+        username LIKE "%${username}%"
+      </if>
+    </where>
+    limit #{currentPage},#{rows}
+  </select>
 </mapper>

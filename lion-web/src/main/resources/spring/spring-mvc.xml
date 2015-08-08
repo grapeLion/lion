@@ -20,8 +20,16 @@
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
+    <bean id="configProperties" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <array>
+                <value>classpath:source.properties</value>
+                <value>classpath:mybatis/db.properties</value>
+            </array>
+        </property>
+    </bean>
     <context:annotation-config />
-    <mvc:annotation-driven>
+    <mvc:annotation-driven conversion-service="conversionService">
         <mvc:argument-resolvers>
             <bean class="cn.grape.lion.annotation.FastJsonArgumentResolver"></bean>
         </mvc:argument-resolvers>
@@ -30,6 +38,14 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
+    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+           <set>
+               <bean class="cn.grape.lion.converter.UserDateConverter"/>
+           </set>
+        </property>
+
+    </bean>
     <!-- 扫描指定的包中的类上的注解 -->
     <context:component-scan base-package="cn.grape.lion"></context:component-scan>
 
@@ -50,6 +66,15 @@
         <!--Spring支持同时配置多个视图解析器，也就是链式视图解析器。这样，在某些情况下，就能够重写某些视图。如果我们配置了多个视图解析器，并想要给视图解析器排序的话，设定 order 属性就可以指定解析器执行的顺序。order的值越高，解析器执行的顺序越晚。-->
         <property name="order" value="2"/>
     </bean>
+
+    <!--校验器-->
+    <!--spring提供的一个校验接口-->
+    <!--<bean id="validatorFactoryBean" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">-->
+        <!--&lt;!&ndash;里边可以制定hibernate 的校验器，也可以制定其他校验器&ndash;&gt;-->
+        <!--&lt;!&ndash;校验器的提供方&ndash;&gt;-->
+        <!--<property name="providerClass" value="org.hibernator"-->
+    <!--</bean>-->
+
 
 
 </beans>

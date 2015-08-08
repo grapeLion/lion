@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.lang.reflect.Field;
 import java.util.List;
 
 /**
@@ -15,16 +16,25 @@ import java.util.List;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {/*"classpath:spring/spring.xml",*/"classpath:spring/spring-mybatis.xml"})
+@ContextConfiguration(locations = {"classpath:spring/spring.xml","classpath:xmlfile/spring-mybatis.xml"})
 public class UserServiceTest {
     @Autowired
-    UserServiceImpl userService;
+    private UserServiceImpl userService;
 
 
     @Test
-    public void test1(){
-       List<User> list = userService.getUserList();
-        System.out.println(list);
+    public void test1() throws Exception{
+        Class clazz = User.class;
+       List<User> list = userService.findUserByName("zhang", 1, 5);
+        for (User user:list){
+            Field[] fields = clazz.getDeclaredFields();
+            for (Field field :fields){
+                field.setAccessible(true);
+                System.out.println(field.getName());
+                System.out.println(field.get(user));
+            }
+            System.out.println(list);
+        }
     }
 
 }

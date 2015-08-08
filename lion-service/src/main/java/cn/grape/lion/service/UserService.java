@@ -13,5 +13,13 @@ public interface UserService {
     User getUserById(Integer id);
 
     List<User> getUserList();
+
+    int addUser(User user);
+
+    int findAllRows();
+
+    List<User> findAllUserByPage(int page,int rows);
+
+    List<User> findUserByName(String username,int page,int rows);
 }
 
